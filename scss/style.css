@@ -19,6 +19,12 @@ body {
 h1 {
   font-size: 5rem;
 }
+.imgs > .top-section-imgs {
+  /* (oldValue - oldMin) * newRange / oldRange + newRange */
+  --value: min(var(--scroll), 30) * 50 / 30;
+  width: calc(50vw + 1vw *  var(--value));
+  transform: translateY(50% - 1% * var(--value));
+}
 
 .full-screen-section {
   height: 100vh;
@@ -76,12 +82,7 @@ h1 {
   translate: 0 0;
 }
 
-.imgs > .top-section-imgs {
-  /* (oldValue - oldMin) * newRange / oldRange + newRange */
-  --value: min(var(--scroll), 30) * 50 / 30;
-  width: calc(50vw + 1vw *  var(--value));
-  transform: translateY(50% - 1% * var(--value));
-}
+
 
 
 [data-img-to-show] {
